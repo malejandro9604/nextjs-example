@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Layout from "../../public/components/layout"
 import styles from "../../styles/Transaction.module.css"
 
-export default function Transaction() {
+export default function Transaction({ data }) {
 	return (
 
 		<Layout
@@ -23,7 +23,33 @@ export default function Transaction() {
 					Back
 				</Link>
 			</div>
+			{
+				data.map(({ id, title, body }) => (
+					<div key={id}>
+						<h3>
+							<Link href={`/transaction/${id}`}>
+								{id} - {title}
+							</Link>
+						</h3>
+						<p>{body}</p>
+					</div>
+				))
+			}
 		</Layout>
 
 	)
+}
+
+export async function getStaticProps() {
+	try {
+		const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+		const data = await res.json()
+		return {
+			props: {
+				data
+			}
+		}
+	} catch (error) {
+		console.log(error)
+	}
 }
