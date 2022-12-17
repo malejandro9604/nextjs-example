@@ -3,7 +3,7 @@ const fetchSingleTransaction = (id) => {
     .then(res => res.json())
 }
 
-export default async function detailsTransaction({ params }) {
+export default async function detailsTransactionPage({ params }) {
     const { id } = params
     const transaction = await fetchSingleTransaction(id)
     return (

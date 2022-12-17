@@ -1,9 +1,9 @@
 'use client'
 import { useState, useMemo, useCallback } from "react"
 
-export default function Home() {
-    const [value1, setValue1] = useState(0)
-    const [value2, setValue2] = useState(0)
+export default function HomePage() {
+    const [value1, setValue1] = useState<number>(0)
+    const [value2, setValue2] = useState<number>(0)
 
     const sumValue1 = () => {
         setValue1(value1 + 1)

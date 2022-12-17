@@ -2,7 +2,7 @@ import Image from "next/image"
 import { ListTransaction } from "./ListTransaction"
 
 
-export default function Transaction() {
+export default function TransactionPage() {
     return(
         <div>
             <h1>Hello Transactions</h1>

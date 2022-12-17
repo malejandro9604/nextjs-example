@@ -4,14 +4,14 @@ import { useRouter } from "next/navigation";
 import Image from "next/image"
 
 
-export default function Expenses() {
+export default function ExpensesPage() {
     const router = useRouter();
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState<number>(0)
     
 
     useEffect(() => {
         document.title = `you have clicked ${count} times`
-    })
+    },[count])
 
     return(
         <div>
