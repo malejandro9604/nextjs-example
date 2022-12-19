@@ -30,7 +30,7 @@
     "**/*.tsx",
     "pages/index.js",
     ".next/types/**/*.ts"
-, "components/Navegation.jsx"  ],
+, "components/Navegation.jsx", "app/jobs/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
